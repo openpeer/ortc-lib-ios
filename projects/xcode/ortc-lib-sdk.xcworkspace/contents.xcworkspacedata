@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../libs/webrtc-deps/webrtcWrapper_ios/webrtcWrapper_ios.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../../../libs/webrtc-deps/webrtcWrapper_mac/webrtcWrapper_mac.xcodeproj">
    </FileRef>
    <FileRef
@@ -15,9 +18,6 @@
    </FileRef>
    <FileRef
       location = "group:../../../libs/ortc-lib/projects/xcode/ortclib/ortclib.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../../../libs/webrtc/all_ios.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:../../../libs/op-services-cpp/projects/xcode/hfservicesTest_ios/hfservicesTest_ios.xcodeproj">
