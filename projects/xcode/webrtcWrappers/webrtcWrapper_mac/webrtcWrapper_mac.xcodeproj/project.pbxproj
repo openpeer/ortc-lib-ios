@@ -128,7 +128,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo note: \"Compile and copy webrtc via ninja\"\nexec env \"PATH=../../../../../bin/ninja:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" ninja -C \"../../../../../libs/webrtc/out_mac/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}\" -f webrtcWrapper.ninja\nexit 1";
+			shellScript = "echo note: \"Compile and copy webrtc via ninja\"\nexec env \"PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" ninja -C \"../../../../../libs/webrtc/out_mac/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}\" -f webrtcWrapper.ninja\nexit 1";
 		};
 /* End PBXShellScriptBuildPhase section */
 
