@@ -6,15 +6,8 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		9499DA8F1BC2A4AD000EA8E9 /* webrtcWrapper_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 9499DA8E1BC2A4AD000EA8E9 /* webrtcWrapper_mac.h */; };
-		9499DA911BC2A4AD000EA8E9 /* webrtcWrapper_mac.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499DA901BC2A4AD000EA8E9 /* webrtcWrapper_mac.m */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		9499DA8B1BC2A4AD000EA8E9 /* libwebrtcWrapper_mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwebrtcWrapper_mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9499DA8E1BC2A4AD000EA8E9 /* webrtcWrapper_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webrtcWrapper_mac.h; sourceTree = "<group>"; };
-		9499DA901BC2A4AD000EA8E9 /* webrtcWrapper_mac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webrtcWrapper_mac.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +24,6 @@
 		9499DA821BC2A4AD000EA8E9 = {
 			isa = PBXGroup;
 			children = (
-				9499DA8D1BC2A4AD000EA8E9 /* webrtcWrapper_mac */,
 				9499DA8C1BC2A4AD000EA8E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,15 +36,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9499DA8D1BC2A4AD000EA8E9 /* webrtcWrapper_mac */ = {
-			isa = PBXGroup;
-			children = (
-				9499DA8E1BC2A4AD000EA8E9 /* webrtcWrapper_mac.h */,
-				9499DA901BC2A4AD000EA8E9 /* webrtcWrapper_mac.m */,
-			);
-			path = webrtcWrapper_mac;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -60,7 +43,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9499DA8F1BC2A4AD000EA8E9 /* webrtcWrapper_mac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9499DA911BC2A4AD000EA8E9 /* webrtcWrapper_mac.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

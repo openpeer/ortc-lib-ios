@@ -6,11 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		9451F2601BC54F57008CB8D7 /* webrtcWrapper_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9451F25F1BC54F57008CB8D7 /* webrtcWrapper_ios.h */; };
-		9451F2621BC54F57008CB8D7 /* webrtcWrapper_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 9451F2611BC54F57008CB8D7 /* webrtcWrapper_ios.m */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		9451F25A1BC54F57008CB8D7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -18,7 +13,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				9451F2601BC54F57008CB8D7 /* webrtcWrapper_ios.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +20,6 @@
 
 /* Begin PBXFileReference section */
 		9451F25C1BC54F57008CB8D7 /* libwebrtcWrapper_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwebrtcWrapper_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9451F25F1BC54F57008CB8D7 /* webrtcWrapper_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webrtcWrapper_ios.h; sourceTree = "<group>"; };
-		9451F2611BC54F57008CB8D7 /* webrtcWrapper_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webrtcWrapper_ios.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +36,6 @@
 		9451F2531BC54F57008CB8D7 = {
 			isa = PBXGroup;
 			children = (
-				9451F25E1BC54F57008CB8D7 /* webrtcWrapper_ios */,
 				9451F25D1BC54F57008CB8D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,15 +46,6 @@
 				9451F25C1BC54F57008CB8D7 /* libwebrtcWrapper_ios.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9451F25E1BC54F57008CB8D7 /* webrtcWrapper_ios */ = {
-			isa = PBXGroup;
-			children = (
-				9451F25F1BC54F57008CB8D7 /* webrtcWrapper_ios.h */,
-				9451F2611BC54F57008CB8D7 /* webrtcWrapper_ios.m */,
-			);
-			path = webrtcWrapper_ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +121,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9451F2621BC54F57008CB8D7 /* webrtcWrapper_ios.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
