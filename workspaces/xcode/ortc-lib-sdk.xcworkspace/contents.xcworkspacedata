@@ -5,10 +5,10 @@
       location = "container:"
       name = "webrtc.builder">
       <FileRef
-         location = "group:webrtcWrappers/webrtcWrapper_mac/webrtcWrapper_mac.xcodeproj">
+         location = "group:../../projects/xcode/webrtcWrappers/webrtcWrapper_ios/webrtcWrapper_ios.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:webrtcWrappers/webrtcWrapper_ios/webrtcWrapper_ios.xcodeproj">
+         location = "group:../../projects/xcode/webrtcWrappers/webrtcWrapper_mac/webrtcWrapper_mac.xcodeproj">
       </FileRef>
    </Group>
    <Group
