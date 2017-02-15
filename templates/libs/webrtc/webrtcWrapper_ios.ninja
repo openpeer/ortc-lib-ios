@@ -120,6 +120,11 @@ subninja obj/webrtc/modules/audio_conference_mixer.ninja
 subninja obj/webrtc/modules/audio_decoder_interface.ninja
 subninja obj/webrtc/modules/audio_device.ninja
 subninja obj/webrtc/modules/audio_encoder_interface.ninja
+subninja obj/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
+subninja obj.host/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
+subninja obj.host/chromium/src/third_party/protobuf/protoc_lib.ninja
+subninja obj.host/chromium/src/third_party/protobuf/protoc.ninja
+subninja obj/webrtc/modules/audioproc_debug_proto.ninja
 subninja obj/webrtc/modules/audio_processing.ninja
 subninja obj/webrtc/modules/bitrate_controller.ninja
 subninja obj/chromium/src/third_party/boringssl/boringssl.ninja
@@ -134,6 +139,7 @@ subninja obj/webrtc/modules/isac.ninja
 subninja obj/webrtc/modules/media_file.ninja
 subninja obj/webrtc/system_wrappers/metrics_default.ninja
 subninja obj/webrtc/modules/rent_a_codec.ninja
+subninja obj/webrtc/rtc_event_log_proto.ninja
 subninja obj/webrtc/rtc_event_log.ninja
 subninja obj/webrtc/modules/isac_common.ninja
 subninja obj/webrtc/modules/neteq.ninja
@@ -147,14 +153,12 @@ subninja obj/webrtc/modules/rtp_rtcp.ninja
 subninja obj/chromium/src/third_party/libsrtp/libsrtp.ninja
 subninja obj/webrtc/system_wrappers/system_wrappers.ninja
 subninja obj/chromium/src/third_party/usrsctp/usrsctplib.ninja
-subninja obj/webrtc/modules/video_render_module.ninja
-subninja obj/webrtc/modules/video_render_module_internal_impl.ninja
 subninja obj/webrtc/modules/video_capture_module.ninja
 subninja obj/webrtc/modules/video_capture_module_internal_impl.ninja
 subninja obj/webrtc/modules/video_coding/utility/video_coding_utility.ninja
 subninja obj/webrtc/modules/video_processing.ninja
 subninja obj/webrtc/voice_engine/voice_engine.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_new.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx.ninja
 subninja obj/webrtc/webrtc_common.ninja
 subninja obj/webrtc/modules/webrtc_h264.ninja
 subninja obj/webrtc/modules/webrtc_opus.ninja
@@ -176,6 +180,7 @@ build audio_conference_mixer: phony libaudio_conference_mixer.a
 build audio_decoder_interface: phony libaudio_decoder_interface.a
 build audio_device: phony libaudio_device.a
 build audio_encoder_interface: phony libaudio_encoder_interface.a
+build audioproc_debug_proto: phony libaudioproc_debug_proto.a
 build audio_processing: phony libaudio_processing.a
 build bitrate_controller: phony libbitrate_controller.a
 build boringssl: phony libboringssl.a
@@ -189,12 +194,14 @@ build ilbc: phony libilbc.a
 build isac: phony libisac.a
 build media_file: phony libmedia_file.a
 build metrics_default: phony libmetrics_default.a
+build rtc_event_log_proto: phony librtc_event_log_proto.a
 build rtc_event_log: phony librtc_event_log.a
 build isac_common: phony libisac_common.a
 build neteq: phony libneteq.a
 build opus: phony libopus.a
 build paced_sender: phony libpaced_sender.a
 build pcm16b: phony libpcm16b.a
+build protobuf_full_do_not_use: phony libprotobuf_full_do_not_use.a
 build red: phony libred.a
 build remote_bitrate_estimator: phony libremote_bitrate_estimator.a
 build rtc_base_approved: phony librtc_base_approved.a
@@ -203,14 +210,12 @@ build libsrtp: phony libsrtp.a
 build system_wrappers: phony libsystem_wrappers.a
 build rent_a_codec: phony librent_a_codec.a
 build usrsctplib: phony libusrsctplib.a
-build video_render_module_internal_impl: phony libvideo_render_module_internal_impl.a
-build video_render_module: phony libvideo_render_module.a
 build video_capture_module: phony libvideo_capture_module.a
 build video_capture_module_internal_impl: phony libvideo_capture_module_internal_impl.a
 build video_coding_utility: phony libvideo_coding_utility.a
 build video_processing: phony libvideo_processing.a
 build voice_engine: phony libvoice_engine.a
-build libvpx_new: phony libvpx_new.a
+build libvpx: phony libvpx.a
 build webrtc_common: phony libwebrtc_common.a
 build webrtc_h264: phony libwebrtc_h264.a
 build webrtc_opus: phony libwebrtc_opus.a
@@ -229,13 +234,15 @@ build libyuv: phony libyuv.a
 build webrtcWrapper: phony $
    libcommon_audio_neon.a libisac_fix.a libisac_neon.a libaudio_coding_module.a $
    libaudio_conference_mixer.a libaudio_decoder_interface.a libaudio_device.a $
-   libaudio_encoder_interface.a libaudio_processing.a libbitrate_controller.a $
+   obj.host/chromium/src/third_party/protobuf/libprotobuf_full_do_not_use.a $
+   libaudio_encoder_interface.a obj.host/chromium/src/third_party/protobuf/libprotoc_lib.a protoc $
+   libaudioproc_debug_proto.a libaudio_processing.a libbitrate_controller.a $
    libboringssl.a libcng.a libcommon_audio.a libcommon_video.a libfield_trial_default.a $
    libg711.a libg722.a libilbc.a libisac.a libmedia_file.a libmetrics_default.a $
-   libneteq.a libopus.a libpaced_sender.a libpcm16b.a librtc_event_log.a libred.a libremote_bitrate_estimator.a $
+   libneteq.a libopus.a libpaced_sender.a libpcm16b.a librtc_event_log_proto.a librtc_event_log.a libred.a libremote_bitrate_estimator.a $
    librtc_base_approved.a librtp_rtcp.a libsrtp.a libsystem_wrappers.a libisac_common.a libusrsctplib.a $
-   libvideo_render_module_internal_impl.a libvideo_render_module.a libvideo_capture_module.a $
+   libvideo_capture_module.a $
    libvideo_capture_module_internal_impl.a libvideo_coding_utility.a libvideo_processing.a $
-   libvoice_engine.a libvpx_new.a libwebrtc_common.a libwebrtc_h264.a libwebrtc_opus.a $
+   libvoice_engine.a libvpx.a libwebrtc_common.a libwebrtc_h264.a libwebrtc_opus.a $
    libwebrtc_i420.a libwebrtc_utility.a libwebrtc_video_coding.a libwebrtc_vp8.a libwebrtc_vp9.a $
    libwebrtc.a libyuv.a librent_a_codec.a libwebrtc_h264_video_toolbox.a
