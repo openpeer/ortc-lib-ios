@@ -116,6 +116,7 @@ subninja obj/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
 subninja obj/chromium/src/third_party/protobuf/protobuf_lite.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protobuf_lite.ninja
+subninja obj.host/chromium/src/third_party/protobuf/protoc_lib.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protoc.ninja
 subninja obj/webrtc/modules/audioproc_debug_proto.ninja
 subninja obj/webrtc/common_video/common_video.ninja 
@@ -154,12 +155,12 @@ subninja obj/webrtc/modules/video_coding/utility/video_coding_utility.ninja
 subninja obj/webrtc/modules/video_processing_sse2.ninja
 subninja obj/webrtc/modules/video_processing.ninja
 subninja obj/webrtc/voice_engine/voice_engine.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_intrinsics_avx2.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_intrinsics_sse2.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_intrinsics_mmx.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_intrinsics_ssse3.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_intrinsics_sse4_1.ninja
-subninja obj/chromium/src/third_party/libvpx_new/libvpx_new.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx_intrinsics_avx2.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx_intrinsics_sse2.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx_intrinsics_mmx.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx_intrinsics_ssse3.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx_intrinsics_sse4_1.ninja
+subninja obj/chromium/src/third_party/libvpx/libvpx.ninja
 subninja obj/webrtc/webrtc_common.ninja
 subninja obj/webrtc/modules/webrtc_h264.ninja
 subninja obj/webrtc/modules/webrtc_opus.ninja
@@ -178,8 +179,6 @@ subninja obj.host/chromium/src/third_party/yasm/genversion.ninja
 subninja obj.host/chromium/src/third_party/yasm/genstring.ninja
 subninja obj.host/chromium/src/third_party/yasm/re2c.ninja
 subninja obj/chromium/src/third_party/libjpeg_turbo/libjpeg.ninja
-subninja obj/webrtc/modules/video_render_module.ninja
-subninja obj/webrtc/modules/video_render_module_internal_impl.ninja
 subninja obj/webrtc/modules/video_capture_module.ninja
 subninja obj/webrtc/modules/video_capture_module_internal_impl.ninja
 subninja obj/webrtc/system_wrappers/system_wrappers.ninja
@@ -227,7 +226,7 @@ build video_coding_utility: phony libvideo_coding_utility.a
 build video_processing_sse2: phony libvideo_processing_sse2.a
 build video_processing: phony libvideo_processing.a
 build voice_engine: phony libvoice_engine.a
-build libvpx_new: phony libvpx_new.a
+build libvpx: phony libvpx.a
 build libvpx_intrinsics_ssse3: phony libvpx_intrinsics_ssse3.a
 build libvpx_intrinsics_mmx: phony libvpx_intrinsics_mmx.a
 build libvpx_intrinsics_avx2: phony libvpx_intrinsics_avx2.a
@@ -242,8 +241,6 @@ build webrtc_i420: phony libwebrtc_i420.a
 build webrtc_utility: phony libwebrtc_utility.a
 build webrtc_video_coding: phony libwebrtc_video_coding.a
 build libjpeg: phony libjpeg_turbo.a
-build video_render_module_internal_impl: phony libvideo_render_module_internal_impl.a
-build video_render_module: phony libvideo_render_module.a
 build video_capture_module: phony libvideo_capture_module.a
 build video_capture_module_internal_impl: phony libvideo_capture_module_internal_impl.a
 build system_wrappers: phony libsystem_wrappers.a
@@ -255,7 +252,7 @@ build usrsctplib: phony libusrsctplib.a
 build boringssl: phony libboringssl.a
 
 build webrtcWrapper: phony $
-   libprotobuf_full_do_not_use.a libprotobuf_lite.a libaudio_processing.a  $
+   libprotobuf_full_do_not_use.a libprotobuf_lite.a libaudio_processing.a  obj.host/chromium/src/third_party/protobuf/libprotoc_lib.a $
    protoc libcommon_video.a libcommon_video.a librtp_rtcp.a libaudio_coding_module.a $
    libaudio_conference_mixer.a libaudio_decoder_interface.a libaudio_device.a $
    libaudio_encoder_interface.a libaudio_processing_sse2.a libbitrate_controller.a $
@@ -263,13 +260,13 @@ build webrtcWrapper: phony $
    libg722.a libilbc.a libisac.a libmedia_file.a libmetrics_default.a librtc_event_log_proto.a libneteq.a $
    libopenmax_dl.a libopus.a libpaced_sender.a libpcm16b.a librtc_event_log.a libred.a $
    libremote_bitrate_estimator.a libvideo_coding_utility.a libisac_common.a libvideo_processing_sse2.a $
-   libvideo_processing.a libvoice_engine.a libvpx_new.a libvpx_intrinsics_ssse3.a $
+   libvideo_processing.a libvoice_engine.a libvpx.a libvpx_intrinsics_ssse3.a $
    libvpx_intrinsics_mmx.a libvpx_intrinsics_avx2.a libvpx_intrinsics_sse2.a $
    libvpx_intrinsics_sse4_1.a libwebrtc_h264.a libwebrtc_vp8.a libwebrtc_vp9.a $
    libwebrtc_opus.a libwebrtc_common.a libwebrtc_i420.a libwebrtc_utility.a $
    libwebrtc_video_coding.a yasm genmacro genmodule genperf genversion genstring re2c $
    obj.host/chromium/src/third_party/yasm/libgenperf_libs.a $
    obj.host/chromium/src/third_party/yasm/generate_files.actions_rules_copies.stamp $
-   libjpeg_turbo.a libvideo_render_module_internal_impl.a libvideo_render_module.a $
+   libjpeg_turbo.a $
    libvideo_capture_module.a libvideo_capture_module_internal_impl.a libsystem_wrappers.a $
    librtc_base_approved.a libyuv.a libsrtp.a libusrsctplib.a libboringssl.a librent_a_codec.a
