@@ -54,6 +54,12 @@
    <Group
       location = "container:"
       name = "zsLib">
+      <FileRef
+         location = "group:../../../xplatform/zsLib-eventing/projects/xcode/zsLib-eventing-osx/zsLib-eventing-osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../../xplatform/zsLib-eventing/projects/xcode/zsLib-eventing-ios/zsLib-eventing-ios.xcodeproj">
+      </FileRef>
       <Group
          location = "container:"
          name = "Test">
