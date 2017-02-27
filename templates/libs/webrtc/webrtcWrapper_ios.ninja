@@ -151,6 +151,8 @@ subninja obj/webrtc/modules/pcm16b.ninja
 subninja obj/webrtc/modules/red.ninja
 subninja obj/webrtc/modules/remote_bitrate_estimator.ninja
 subninja obj/webrtc/base/rtc_base_approved.ninja
+subninja obj/webrtc/base/rtc_task_queue.ninja
+subninja obj/webrtc/base/rtc_base.ninja
 subninja obj/webrtc/modules/rtp_rtcp.ninja
 subninja obj/chromium/src/third_party/libsrtp/libsrtp.ninja
 subninja obj/webrtc/system_wrappers/system_wrappers.ninja
@@ -159,6 +161,7 @@ subninja obj/webrtc/modules/video_capture_module.ninja
 subninja obj/webrtc/modules/video_capture_module_internal_impl.ninja
 subninja obj/webrtc/modules/video_coding/utility/video_coding_utility.ninja
 subninja obj/webrtc/modules/video_processing.ninja
+subninja obj/webrtc/modules/video_processing_neon.ninja
 subninja obj/webrtc/voice_engine/voice_engine.ninja
 subninja obj/chromium/src/third_party/libvpx/libvpx.ninja
 subninja obj/webrtc/webrtc_common.ninja
@@ -172,6 +175,10 @@ subninja obj/webrtc/modules/video_coding/codecs/vp8/webrtc_vp8.ninja
 subninja obj/webrtc/modules/video_coding/codecs/vp9/webrtc_vp9.ninja
 subninja obj/webrtc/webrtc.ninja
 subninja obj/chromium/src/third_party/libyuv/libyuv.ninja
+subninja obj/webrtc/voice_engine/level_indicator.ninja
+subninja obj/webrtc/modules/congestion_controller.ninja
+subninja obj/webrtc/modules/builtin_audio_decoder_factory.ninja
+subninja obj/webrtc/sdk/rtc_sdk_common_objc.ninja
 
 build common_audio_neon: phony libcommon_audio_neon.a
 build isac_fix: phony libisac_fix.a
@@ -208,6 +215,8 @@ build protobuf_full_do_not_use: phony libprotobuf_full_do_not_use.a
 build red: phony libred.a
 build remote_bitrate_estimator: phony libremote_bitrate_estimator.a
 build rtc_base_approved: phony librtc_base_approved.a
+build rtc_task_queue: phony librtc_task_queue.a
+build rtc_base: phony librtc_base.a
 build rtp_rtcp: phony librtp_rtcp.a
 build libsrtp: phony libsrtp.a
 build system_wrappers: phony libsystem_wrappers.a
@@ -217,6 +226,7 @@ build video_capture_module: phony libvideo_capture_module.a
 build video_capture_module_internal_impl: phony libvideo_capture_module_internal_impl.a
 build video_coding_utility: phony libvideo_coding_utility.a
 build video_processing: phony libvideo_processing.a
+build video_processing_neon: phony libvideo_processing_neon.a
 build voice_engine: phony libvoice_engine.a
 build libvpx: phony libvpx.a
 build webrtc_common: phony libwebrtc_common.a
@@ -230,6 +240,10 @@ build webrtc_vp8: phony libwebrtc_vp8.a
 build webrtc_vp9: phony libwebrtc_vp9.a
 build webrtc: phony libwebrtc.a
 build libyuv: phony libyuv.a
+build level_indicator: phony liblevel_indicator.a
+build congestion_controller: phony libcongestion_controller.a
+build builtin_audio_decoder_factory: phony libbuiltin_audio_decoder_factory.a
+build rtc_sdk_common_objc: phony librtc_sdk_common_objc.a
 #build libjpeg: phony libjpeg_turbo.a
 
 
@@ -242,9 +256,9 @@ build webrtcWrapper: phony $
    libboringssl.a libcng.a libcommon_audio.a libcommon_video.a libfield_trial_default.a $
    libg711.a libg722.a libilbc.a libisac.a libmedia_file.a libmetrics_default.a $
    libneteq.a libopus.a libpaced_sender.a libpcm16b.a librtc_event_log_proto.a librtc_event_log.a libred.a libremote_bitrate_estimator.a $
-   librtc_base_approved.a librtp_rtcp.a libsrtp.a libsystem_wrappers.a libisac_common.a libusrsctplib.a $
-   libvideo_capture_module.a $
-   libvideo_capture_module_internal_impl.a libvideo_coding_utility.a libvideo_processing.a $
+   librtc_base_approved.a librtc_base.a librtc_task_queue.a librtp_rtcp.a libsrtp.a libsystem_wrappers.a libisac_common.a libusrsctplib.a $
+   libvideo_capture_module.a  liblevel_indicator.a libcongestion_controller.a $
+   libvideo_capture_module_internal_impl.a libvideo_coding_utility.a  libvideo_processing_neon.a libvideo_processing.a $
    libvoice_engine.a libvpx.a libwebrtc_common.a libwebrtc_h264.a libwebrtc_opus.a $
    libwebrtc_i420.a libwebrtc_utility.a libwebrtc_video_coding.a libwebrtc_vp8.a libwebrtc_vp9.a $
-   libwebrtc.a libyuv.a librent_a_codec.a libwebrtc_h264_video_toolbox.a
+   libwebrtc.a libyuv.a librent_a_codec.a libwebrtc_h264_video_toolbox.a libbuiltin_audio_decoder_factory.a librtc_sdk_common_objc.a

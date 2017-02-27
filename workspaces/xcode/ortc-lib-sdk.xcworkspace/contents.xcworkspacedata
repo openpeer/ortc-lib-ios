@@ -25,7 +25,7 @@
          </FileRef>
       </Group>
       <FileRef
-         location = "group:../../../xplatform/ortclib-services-cpp/projects/xcode/ortclib.services-ios/ortclib.services-ios.xcodeproj">
+         location = "container:../../../xplatform/ortclib-services-cpp/projects/xcode/ortclib.services-ios/ortclib.services-ios.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:../../../xplatform/ortclib-services-cpp/projects/xcode/ortclib.services-osx/ortclib.services-osx.xcodeproj">
@@ -71,7 +71,7 @@
          </FileRef>
       </Group>
       <FileRef
-         location = "group:../../../xplatform/zsLib/projects/xcode/zsLib-ios/zsLib-ios.xcodeproj">
+         location = "container:../../../xplatform/zsLib/projects/xcode/zsLib-ios/zsLib-ios.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:../../../xplatform/zsLib/projects/xcode/zsLib-osx/zsLib-osx.xcodeproj">
@@ -81,7 +81,7 @@
       location = "container:"
       name = "idnkit">
       <FileRef
-         location = "group:../../../xplatform/idnkit/projects/xcode/idnkit-ios/idnkit-ios.xcodeproj">
+         location = "container:../../../xplatform/idnkit/projects/xcode/idnkit-ios/idnkit-ios.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:../../../xplatform/idnkit/projects/xcode/idnkit-osx/idnkit-osx.xcodeproj">
@@ -91,7 +91,7 @@
       location = "container:"
       name = "udns">
       <FileRef
-         location = "group:../../../xplatform/udns/projects/xcode/udns-ios/udns-ios.xcodeproj">
+         location = "container:../../../xplatform/udns/projects/xcode/udns-ios/udns-ios.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:../../../xplatform/udns/projects/xcode/udns-osx/udns-osx.xcodeproj">
@@ -104,7 +104,7 @@
          location = "group:../../../xplatform/cryptopp/projects/xcode/cryptopp-osx/cryptopp-osx.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:../../../xplatform/cryptopp/projects/xcode/cryptopp-ios/cryptopp-ios.xcodeproj">
+         location = "container:../../../xplatform/cryptopp/projects/xcode/cryptopp-ios/cryptopp-ios.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>
