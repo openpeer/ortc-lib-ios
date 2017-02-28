@@ -58,7 +58,9 @@
 				9451F2581BC54F57008CB8D7 /* Sources */,
 				9451F2591BC54F57008CB8D7 /* Frameworks */,
 				9451F25A1BC54F57008CB8D7 /* CopyFiles */,
-				9451F26E1BC54F99008CB8D7 /* ShellScript */,
+				52389BB21E60517D001AE52F /* Run Script armv7 */,
+				527D5BB51E60588000950991 /* Run Script arm64 */,
+				52BA74081E6595D200CAF5AE /* Run Script merge libs */,
 			);
 			buildRules = (
 			);
@@ -101,18 +103,47 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9451F26E1BC54F99008CB8D7 /* ShellScript */ = {
+		52389BB21E60517D001AE52F /* Run Script armv7 */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script armv7";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo note: \"Compile and copy webrtc via ninja\"\nexec env \"PATH=../../../../../../bin/ninja:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" ninja -C \"../../../../../../webrtc/xplatform/webrtc/out_ios/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}\" -f webrtcWrapper_ios.ninja\nexit 1s";
+			shellScript = "echo note: \"Compile and copy webrtc via ninja for armv7\"\nexec env \"PATH=../../../../../../bin/ninja:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" ninja -C \"../../../../../../webrtc/xplatform/webrtc/out_ios_armv7/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}\" -f webrtcWrapper_ios.ninja\nexit 1";
+		};
+		527D5BB51E60588000950991 /* Run Script arm64 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script arm64";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo note: \"Compile and copy webrtc via ninja for arm64\"\nexec env \"PATH=../../../../../../bin/ninja:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" ninja -C \"../../../../../../webrtc/xplatform/webrtc/out_ios_arm64/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}\" -f webrtcWrapper_ios.ninja\nexit 1";
+		};
+		52BA74081E6595D200CAF5AE /* Run Script merge libs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script merge libs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo note: \"Merging WebRtc libraries\"\nexec env \"PATH=../../../../../../bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin\" mergeWebRtciOsLibs.sh ../../../../../../webrtc/xplatform/webrtc/out_ios_arm64/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}  ../../../../../../webrtc/xplatform/webrtc/out_ios_armv7/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME} ../../../../../../webrtc/xplatform/webrtc/out_ios/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME} ../../../../../../webrtc/xplatform/webrtc/out_ios";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -208,7 +239,7 @@
 		9451F2661BC54F57008CB8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -218,7 +249,7 @@
 		9451F2671BC54F57008CB8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

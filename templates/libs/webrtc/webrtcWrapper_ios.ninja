@@ -125,6 +125,7 @@ subninja obj/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protobuf_full_do_not_use.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protoc_lib.ninja
 subninja obj.host/chromium/src/third_party/protobuf/protoc.ninja
+subninja obj/chromium/src/third_party/protobuf/protobuf_lite.ninja
 subninja obj/webrtc/modules/audioproc_debug_proto.ninja
 subninja obj/webrtc/modules/audio_processing.ninja
 subninja obj/webrtc/modules/audio_processing_neon.ninja
@@ -189,6 +190,7 @@ build audio_decoder_factory_interface: phony libaudio_decoder_factory_interface.
 build audio_decoder_interface: phony libaudio_decoder_interface.a
 build audio_device: phony libaudio_device.a
 build audio_encoder_interface: phony libaudio_encoder_interface.a
+build protobuf_lite: phony libprotobuf_lite.a
 build audioproc_debug_proto: phony libaudioproc_debug_proto.a
 build audio_processing: phony libaudio_processing.a
 build audio_processing_neon: phony libaudio_processing_neon.a
@@ -250,8 +252,7 @@ build rtc_sdk_common_objc: phony librtc_sdk_common_objc.a
 build webrtcWrapper: phony $
    libcommon_audio_neon.a libisac_fix.a libisac_neon.a libaudio_coding_module.a $
    libaudio_conference_mixer.a libaudio_decoder_factory_interface.a libaudio_decoder_interface.a libaudio_device.a $
-   obj.host/chromium/src/third_party/protobuf/libprotobuf_full_do_not_use.a $
-   libaudio_encoder_interface.a obj.host/chromium/src/third_party/protobuf/libprotoc_lib.a protoc $
+   libaudio_encoder_interface.a obj.host/chromium/src/third_party/protobuf/libprotoc_lib.a libprotobuf_lite.a protoc $
    libaudioproc_debug_proto.a libaudio_processing_neon.a libaudio_processing.a libbitrate_controller.a $
    libboringssl.a libcng.a libcommon_audio.a libcommon_video.a libfield_trial_default.a $
    libg711.a libg722.a libilbc.a libisac.a libmedia_file.a libmetrics_default.a $
