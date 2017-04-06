@@ -3,6 +3,10 @@
    version = "1.0">
    <Group
       location = "container:"
+      name = "ortclib-c-wrapper">
+   </Group>
+   <Group
+      location = "container:"
       name = "webrtc.builder">
       <FileRef
          location = "group:../../projects/xcode/webrtcWrappers/webrtcWrapper_ios/webrtcWrapper_ios.xcodeproj">
