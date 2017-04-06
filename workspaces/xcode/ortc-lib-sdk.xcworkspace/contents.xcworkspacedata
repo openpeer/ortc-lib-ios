@@ -3,7 +3,19 @@
    version = "1.0">
    <Group
       location = "container:"
-      name = "ortclib-c-wrapper">
+      name = "ortclib-wrapper">
+      <FileRef
+         location = "group:../../../xplatform/ortclib-cpp/projects/xcode/ortclib-c-ios/ortclib-c-ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../../xplatform/ortclib-cpp/projects/xcode/ortclib-c-osx/ortclib-c-osx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../../xplatform/ortclib-cpp/projects/xcode/ortclib-wrapper-ios/ortclib-wrapper-ios.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../../xplatform/ortclib-cpp/projects/xcode/ortclib-wrapper-osx/ortclib-wrapper-osx.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "container:"
